@@ -1,9 +1,9 @@
 #Simple Ping Pong Game
 
-import turtle  # graphics
+import turtle  
 import os 
 
-wn = turtle.Screen()   # wn is windows
+wn = turtle.Screen()   
 wn.title("Pong by @MaggieDuhart")
 wn.bgcolor("black")
 wn.setup(width=800, height=600)
@@ -14,30 +14,30 @@ score_a = 0
 score_b = 0
 
 # Paddle A 
-paddle_a = turtle.Turtle()   # turtle is module, Turtle is class
+paddle_a = turtle.Turtle()   
 paddle_a.speed(0)
 paddle_a.shape("square")
 paddle_a.color("white")
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 paddle_a.penup()
-paddle_a.goto(-350, 0) # coordinates, where to start
+paddle_a.goto(-350, 0) 
 
 # Paddle B
-paddle_b = turtle.Turtle()   # turtle is module, Turtle is class
+paddle_b = turtle.Turtle()   
 paddle_b.speed(0)
 paddle_b.shape("square")
 paddle_b.color("white")
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
-paddle_b.goto(350, 0) # coordinates, where to start
+paddle_b.goto(350, 0) 
 
 # Ball
-ball = turtle.Turtle()   # turtle is module, Turtle is class
+ball = turtle.Turtle()   
 ball.speed(0)
 ball.shape("square")
 ball.color("white")
 ball.penup()
-ball.goto(0, 0) # coordinates, where to start
+ball.goto(0, 0)
 ball.dx = 1
 ball.dy = -1
 
@@ -53,29 +53,29 @@ pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "norm
 #Function
 def paddle_a_up():
     y = paddle_a.ycor()
-    y += 20 # add 20 pixels to the y coordinate
-    paddle_a.sety(y) #set y to the new y
+    y += 20
+    paddle_a.sety(y) 
 
 def paddle_a_down():
     y = paddle_a.ycor()
-    y -= 20 # add 20 pixels to the y coordinate
-    paddle_a.sety(y) #set y to the new y
+    y -= 20 
+    paddle_a.sety(y) 
 
 def paddle_b_up():
     y = paddle_b.ycor()
-    y += 20 # add 20 pixels to the y coordinate
-    paddle_b.sety(y) #set y to the new y
+    y += 20 
+    paddle_b.sety(y) 
 
 def paddle_b_down():
     y = paddle_b.ycor()
-    y -= 20 # add 20 pixels to the y coordinate
-    paddle_b.sety(y) #set y to the new y
+    y -= 20
+    paddle_b.sety(y) 
 
 # Keyboard Binding
-wn.listen() #will listen the keyboard input
-wn.onkeypress(paddle_a_up, "w")  #will go up when listen w  
+wn.listen() 
+wn.onkeypress(paddle_a_up, "w")   
 wn.onkeypress(paddle_a_down, "s")
-wn.onkeypress(paddle_b_up, "Up")  #will go up when listen w  
+wn.onkeypress(paddle_b_up, "Up") 
 wn.onkeypress(paddle_b_down, "Down")  
 
 
@@ -84,7 +84,7 @@ while True:
     wn.update()
 
     # Move the ball
-    ball.setx(ball.xcor() + ball.dx) # ball start 0.0 and star 2
+    ball.setx(ball.xcor() + ball.dx) 
     ball.sety(ball.ycor() + ball.dy)
 
     # Border checking 
